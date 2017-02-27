@@ -108,6 +108,7 @@ class AmazonS3FileBackend extends FileBackendStore {
 		}
 
 		$this->client = S3Client::factory( array(
+			'version' => '2006-03-01',
 			'key' => isset( $config['awsKey'] ) ? $config['awsKey'] : $wgAWSCredentials['key'],
 			'secret' => isset( $config['awsSecret'] ) ? $config['awsSecret'] : $wgAWSCredentials['secret'],
 			'token' => isset( $config['awsToken'] ) ? $config['awsToken'] : $wgAWSCredentials['token'],
